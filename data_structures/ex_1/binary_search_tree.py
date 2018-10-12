@@ -3,9 +3,20 @@ class BinarySearchTree:
     self.value = value
     self.left = None
     self.right = None
+    print('test')
 
   def depth_first_for_each(self, cb):
-    pass    
+    if self.value == cb:
+      return True
+     
+    if self.left:
+      if self.left.depth_first_for_each(cb):
+        return True
+      elif self.right:
+        if self.right.depth_first_for_each(cb):
+          return True
+    else:
+      return False 
 
   def breadth_first_for_each(self, cb):
     pass
@@ -44,3 +55,4 @@ class BinarySearchTree:
         max_value = current.value
       current = current.right
     return max_value
+
