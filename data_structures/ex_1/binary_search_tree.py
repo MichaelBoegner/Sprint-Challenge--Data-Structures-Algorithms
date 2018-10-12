@@ -19,7 +19,17 @@ class BinarySearchTree:
       return False 
 
   def breadth_first_for_each(self, cb):
-    pass
+    print('values', self.value)
+    if self.value == target:
+      return True
+      
+    while self.value:
+      if self.left:
+        self.left.breadth_first_for_each(target)
+      if self.right:
+        self.right.breadth_first_for_each(target)
+    return self.breadth_first_for_each    
+    return False
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
